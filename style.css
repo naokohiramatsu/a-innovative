@@ -1,0 +1,969 @@
+/*
+Theme Name: A-innovative
+*/
+
+@charset "UTF-8";
+/*共通*/
+body {
+  font-size: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  width: 100%;
+  vertical-align: bottom;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 1158px;
+    margin: auto;
+  }
+}
+
+/* title */
+.section__title--en {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  font-family: "Poppins", system-ui;
+  font-weight: 600;
+  font-style: italic;
+  color: #191970;
+  font-size: 4rem;
+}
+.section__title--en--jp {
+  font-size: 0.8rem;
+}
+.section__title--en::after {
+  border-top: 3px solid #bfbfbf;
+  content: "";
+  width: 100%;
+  margin-left: 100px;
+}
+
+/*ボタンmore button*/
+/* button*/
+.button {
+  display: block;
+  color: #000;
+  text-align: center;
+  font-weight: normal;
+  border: 1px solid #000;
+  width: 224px;
+  padding: 10px;
+}
+
+/* contact__button*/
+.contact__btn {
+  width: 400px;
+  background-color: #2e2e34;
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  margin: auto;
+  font-weight: bold;
+  padding-top: 27px;
+  padding-bottom: 27px;
+}
+
+.contact__container {
+  padding-bottom: 30px;
+}
+/*contact*/
+.contact__information {
+  padding-bottom: 50px;
+}
+
+/*ヘッダー*/
+.header {
+  display: flex;
+  justify-content: space-between;
+  height: 120px;
+  align-items: center;
+  background-color: #fff;
+  max-width: 1158px;
+  margin: auto;
+}
+.header__logo {
+  line-height: 0;
+}
+
+.header__nav {
+  display: flex;
+  flex-direction: row;
+  -moz-column-gap: 20px;
+  column-gap: 20px;
+  list-style: none;
+  font-size: 1.7rem;
+}
+
+.hamburger__btn {
+  width: 76px;
+  height: 80px;
+  font-size: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 15px;
+}
+@media screen and (min-width: 768px) {
+  .hamburger__btn {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .hamburger__menu {
+    width: calc(100% - 100px);
+    position: fixed;
+    top: 64px;
+    left: 0;
+    padding: 2rem;
+    background-color: #191970;
+    transition: opacity 0.3s linear;
+    visibility: hidden;
+    opacity: 0;
+    border-radius: 40px;
+    text-align: center;
+    margin-left: 50px;
+    margin-right: 50px;
+    flex-direction: column;
+    row-gap: 30px;
+  }
+  .hamburger__menu a {
+    color: #fff;
+  }
+}
+/* 開いている状態 */
+.hamburger__menu-active {
+  left: 0;
+  opacity: 1;
+  visibility: visible;
+  z-index: 1;
+}
+
+/* メインビジュアル */
+.main__visual-img {
+  width: 100vw;
+  height: 573px;
+  background-image: url(./images/main/main.jpg);
+  position: relative;
+  border-bottom: 20px solid #191970;
+}
+@media screen and (max-width: 767px) {
+  .main__visual-img {
+    width: 100%;
+    height: 300px;
+  }
+}
+
+.main__visual-txt {
+  font-size: 2rem;
+  color: #191970;
+  position: absolute;
+  right: 1vw;
+  bottom: 3vh;
+  line-height: 2;
+}
+
+/*greeting あいさつ*/
+.greeting {
+  margin-bottom: 45px;
+}
+
+.greeting__item {
+  display: flex;
+  flex-direction: row;
+  -moz-column-gap: 20px;
+  column-gap: 20px;
+}
+.greeting__item-img {
+  width: 521px;
+  height: 327px;
+}
+@media screen and (max-width: 767px) {
+  .greeting__item {
+    flex-direction: column;
+  }
+}
+
+.greeting__item-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  width: 75%;
+}
+.greeting__item-body-title {
+  font-size: 2.5rem;
+}
+.greeting__item-body-txt {
+  font-size: 1.25rem;
+  line-height: 2;
+}
+
+/*banner*/
+.banner {
+  background-image: url(./images/banner/banner.jpg);
+  width: 100vw;
+  height: 447px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+.banner__mask {
+  position: absolute;
+  background-color: rgba(35, 35, 197, 0.7);
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+.banner__txt {
+  font-family: "Poppins", system-ui;
+  font-weight: 600;
+  font-style: italic;
+  color: #191970;
+  position: absolute;
+  color: #fff;
+  font-size: clamp(2rem, 7vw, 7rem);
+  z-index: 2;
+  /*マスクしたさらに上に文字が乗るように*/
+  top: 20%;
+  padding: 20px;
+  left: 10%;
+}
+
+.js-fade {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-900px);
+  transition: opacity 1s, visibility 1s, transform 1s;
+}
+
+.scroll {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0px);
+}
+
+/*service*/
+.service__img {
+  max-width: 521px;
+  max-height: 327px;
+}
+
+.service__item-body {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  margin-bottom: 30px;
+}
+@media screen and (max-width: 767px) {
+  .service__item-body {
+    flex-direction: column-reverse;
+    margin-bottom: 20px;
+  }
+}
+
+.service__item-content {
+  padding: 20px;
+  position: relative;
+}
+@media screen and (max-width: 767px) {
+  .service__item-content {
+    padding: 0px;
+  }
+}
+
+.service__item-btn {
+  position: absolute;
+  bottom: -11.5vh;
+  right: 20%;
+}
+@media screen and (max-width: 767px) {
+  .service__item-btn {
+    position: initial;
+  }
+}
+
+/*serviceの詳細*/
+.service__visual {
+  background-image: url(./images/service-detail/service-detail-top.jpg);
+  width: 100vw;
+  height: 575px;
+  -o-object-fit: cover;
+  object-fit: cover;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.service__cover-txt--en {
+  font-family: "Poppins", system-ui;
+  font-weight: 600;
+  font-style: italic;
+  color: #191970;
+  font-size: 5rem;
+  color: #191970;
+}
+@media screen and (max-width: 1130px) {
+  .service__cover-txt--en {
+    font-size: 2.5rem;
+  }
+}
+
+.service__cover-txt--jp {
+  font-size: 2rem;
+  color: #191970;
+}
+
+.service__item--detail-title {
+  font-size: 2.5rem;
+  color: #191970;
+}
+@media screen and (max-width: 767px) {
+  .service__item--detail-title {
+    text-align: center;
+  }
+}
+.service__item--detail-top {
+  width: 30%;
+  margin-bottom: 50px;
+}
+@media screen and (max-width: 767px) {
+  .service__item--detail-top {
+    width: 100%;
+  }
+}
+.service__item--list {
+  width: calc((100% - 0.5625rem) / 3);
+}
+@media screen and (max-width: 767px) {
+  .service__item--list {
+    width: 100%;
+  }
+}
+.service__item--group {
+  display: flex;
+  -moz-column-gap: 20px;
+  column-gap: 20px;
+}
+@media screen and (max-width: 767px) {
+  .service__item--group {
+    flex-direction: column;
+  }
+}
+.service__item--list-title {
+  font-family: "Poppins", system-ui;
+  font-weight: 600;
+  font-style: italic;
+  color: #191970;
+  color: #191970;
+}
+
+.service__visual-img {
+  position: relative;
+}
+
+.section__cover-txt-group {
+  position: absolute;
+  bottom: 15vh;
+  left: 10%;
+}
+
+/* news
+------------------------------------------ */
+.news__item-body {
+  display: flex;
+  justify-content: center;
+  border-top: 2px solid #ddd7d7;
+  padding-top: 35px;
+  padding-bottom: 35px;
+}
+.news__item-body--title {
+  font-size: 28px;
+}
+@media screen and (max-width: 767px) {
+  .news__item-body--title {
+    font-size: 20px;
+  }
+}
+.news__item-body--txt {
+  line-height: 1.75;
+}
+.news__item-body--description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
+  margin-left: 30px;
+}
+.news__item-body--title-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  vertical-align: baseline;
+  margin-bottom: 27px;
+}
+.news__item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.news__img img {
+  width: 300px;
+  height: auto;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+.news__date {
+  font-size: 22px;
+}
+@media screen and (max-width: 767px) {
+  .news__date {
+    font-size: 16px;
+  }
+}
+
+.read__more {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 90px;
+}
+
+.read__more--number {
+  display: flex;
+  justify-content: center;
+}
+.read__more--number li {
+  width: 40px;
+  height: 40px;
+  margin-right: 20px;
+  line-height: 40px;
+  text-align: center;
+}
+.read__more--number li:first-child {
+  background-color: #191970;
+  border: #191970;
+  border-radius: 50%;
+  color: #fff;
+}
+
+/*news*/
+.news__img {
+  max-width: 199px;
+  max-height: 199px;
+}
+
+.news__item-body {
+  display: flex;
+  justify-content: center;
+  border-top: 2px solid #ddd7d7;
+  padding-top: 35px;
+  padding-bottom: 35px;
+}
+@media screen and (max-width: 767px) {
+  .news__item-body {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.news__item-body-title {
+  font-size: 28px;
+}
+@media screen and (max-width: 767px) {
+  .news__item-body-title {
+    font-size: 20px;
+  }
+}
+.news__item-body-txt {
+  line-height: 1.75;
+}
+.news__item-body-description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
+  margin-left: 30px;
+}
+.news__item-body-title-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  vertical-align: baseline;
+  margin-bottom: 27px;
+}
+.news__item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.news__img img {
+  width: 300px;
+  height: auto;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+.news__date {
+  font-size: 22px;
+}
+@media screen and (max-width: 767px) {
+  .news__date {
+    font-size: 16px;
+  }
+}
+
+.read__more {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 90px;
+}
+
+.read__more-number {
+  display: flex;
+  justify-content: center;
+}
+.read__more-number li {
+  width: 40px;
+  height: 40px;
+  margin-right: 20px;
+  line-height: 40px;
+  text-align: center;
+}
+.read__more-number li:first-child {
+  background-color: #191970;
+  border: #191970;
+  border-radius: 50%;
+  color: #fff;
+}
+
+/* newsの詳細 */
+.news__detail {
+  margin-bottom: 50px;
+}
+.news__detail-img--big {
+  max-width: 1158px;
+  max-height: 680px;
+}
+
+.news__detail-img--small {
+  max-width: 900px;
+  max-height: 540px;
+  margin: auto;
+}
+
+.news__item-description {
+  display: flex;
+  flex-direction: column;
+}
+
+.news__detail-txt {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+}
+
+.news__detail-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.news__detail-date {
+  font-size: 22px;
+}
+
+.news__detail-title_02 {
+  font-size: 1.5rem;
+}
+
+.news__detail-item-area {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 2px solid #bfbfbf;
+  margin-bottom: 30px;
+}
+
+/*company*/
+.company__area {
+  background-color: #e8e7e7;
+  position: relative;
+}
+
+.company__item {
+  padding-bottom: 80px;
+}
+
+.company__btn {
+  position: absolute;
+  bottom: 2vh;
+  right: 10%;
+}
+@media screen and (max-width: 767px) {
+  .company__btn {
+    position: initial;
+  }
+}
+
+/*company詳細*/
+.company-detail__cover {
+  background-image: url(./images/company-detail/company__cover.jpg);
+  width: 100vw;
+  height: 447px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.company__mask {
+  position: absolute;
+  background-color: rgba(52, 49, 136, 0.7);
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+.company__txt {
+  font-family: "Poppins", system-ui;
+  font-weight: 600;
+  font-style: italic;
+  color: #191970;
+  position: absolute;
+  color: #fff;
+  font-size: clamp(2rem, 7vw, 7rem);
+  z-index: 2;
+  /*マスクしたさらに上に文字が乗るように*/
+  top: 20%;
+  padding: 20px;
+  left: 10%;
+}
+
+/* company 詳細　企業理念・ビジョンなど
+------------------------------------------ */
+.corporate-philosophy__item-img {
+  max-width: 521px;
+  max-height: 327px;
+}
+
+.vison {
+  background-color: #e8e7e7;
+  padding-bottom: 50px;
+}
+
+.access {
+  background-color: #e8e7e7;
+  padding-bottom: 50px;
+}
+
+.googlemap__btn {
+  background-color: #2e2e34;
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  margin: auto;
+  font-weight: bold;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.googlemap__btn::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid #fff;
+  border-top: 2px solid #fff;
+  display: inline-block;
+  transform: rotate(45deg);
+  margin-left: 10px;
+}
+
+.corporate-philosophy__item,
+.vison__item {
+  display: flex;
+  flex-direction: row-reverse;
+  margin-bottom: 36px;
+}
+
+@media screen and (max-width: 767px) {
+  .corporate-philosophy__item,
+  .vison__item {
+    flex-direction: column;
+  }
+}
+.corporate-philosoph__item-body,
+.vison__item-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-right: 40px;
+}
+
+/* 会社概要 */
+#company__info--table th,
+td {
+  padding: 24px 0;
+  border-bottom: 1px solid #d6d3d3;
+  font-weight: normal;
+}
+
+#company__info--table th {
+  width: 30%;
+}
+
+table {
+  margin: auto;
+}
+
+/* アクセス*/
+#access__info--table td {
+  border: none;
+}
+
+.access__info {
+  display: flex;
+}
+
+.access__item {
+  display: flex;
+  justify-content: center;
+}
+
+@media screen and (max-width: 767px) {
+  .access__item {
+    flex-direction: column;
+  }
+}
+#access__info--table th {
+  width: 30%;
+}
+
+th {
+  text-align: left;
+  font-weight: normal;
+}
+
+.access__item-body {
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+#access__info--table {
+  font-size: 20px;
+  font-weight: normal;
+}
+
+.map {
+  position: relative;
+  width: 50%;
+  height: 0;
+  padding-top: 56.25%;
+}
+
+.map iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@media only screen and (max-width: 768px) {
+  .map {
+    padding-top: 100%;
+    width: 100%;
+  }
+}
+
+/* footer */
+.footer {
+  background-color: #191970;
+  color: #fff;
+}
+
+.footer__area {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.footer__item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.footer__sns {
+  display: flex;
+  font-size: 30px;
+}
+.footer li {
+  margin-right: 20px;
+}
+.footer li i {
+  color: #fff;
+}
+.footer__item-txt {
+  text-align: center;
+  font-size: 16px;
+}
+.footer__logo {
+  width: 200px;
+  padding: 2%;
+}
+@media screen and (max-width: 767px) {
+  .footer__logo {
+    min-width: 150px;
+  }
+}
+.footer__item--left {
+  line-height: 1.6;
+}
+
+.footer__item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  -moz-column-gap: 200px;
+  column-gap: 200px;
+  margin: auto;
+  padding: 10px;
+}
+@media screen and (max-width: 767px) {
+  .footer__item {
+    flex-direction: column;
+    -moz-column-gap: 0;
+    column-gap: 0;
+  }
+}
+
+.footer__bottom-text {
+  font-size: 0.6rem;
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+/*お問い合わせフォーム*/
+.contact__area {
+  background-image: url("images/contact/contact__bg.jpg");
+  background-position: center;
+  padding-bottom: 50px;
+  background-size: cover;
+}
+
+#contact p {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#contact dl {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+#contact dt {
+  width: 30%;
+}
+
+#contact dd {
+  width: 70%;
+  margin-bottom: 10px;
+}
+
+#contact dd input,
+#contact dd textarea {
+  width: 100%;
+  border: solid 1px #c8c8c8;
+  padding: 10px;
+}
+
+#contact dd textarea {
+  height: 10rem;
+}
+
+#contact .button {
+  text-align: center;
+}
+
+#contact .button input {
+  border: solid 1px #24292e;
+  width: 200px;
+  background-color: #24292e;
+  color: #fff;
+  padding: 15px 0;
+  transition: all 0.3s;
+}
+
+#contact .button input:hover {
+  background: #fff;
+  color: #24292e;
+}
+.label__required {
+  color: #fff;
+  font-weight: bold;
+  border: 1px solid #ff0000;
+  background-color: #ff0000;
+  border-radius: 5px;
+  padding: 2px 5px;
+  font-size: 15px;
+  margin-left: 20px;
+}
+
+/*single.php の追加CSS*/
+
+.wp-block-heading {
+  font-size: 1.2rem;
+  border-bottom: 2px solid #bfbfbf;
+  margin-bottom: 20px;
+}
+
+/*ページネーション*/
+.pagination {
+  text-align: center;
+  margin-top: 20px;
+  margin: 50px auto;
+}
+
+.wp-pagenavi {
+  display: inline-block;
+}
+
+.wp-pagenavi a,
+.wp-pagenavi span {
+  padding: 10px;
+  background-color: #f2f2f2;
+
+  color: #333;
+  text-decoration: none;
+}
+
+.wp-pagenavi a:hover {
+  background-color: navy;
+  color: #fff;
+}
+
+.wp-pagenavi .current {
+  background-color: navy;
+  color: #fff;
+  border-radius: 50%;
+  padding: 10px;
+}
+.pages {
+  display: none;
+}
